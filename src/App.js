@@ -1,41 +1,27 @@
 import React from 'react';
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
+import Header from './Components/Header';
+import Home from './Components/Home';
+import Menu from './Components/Menu';
+import Specials from './Components/Specials';
+import Gallery from './Components/Gallery';
+import Booxtable from './Components/Booxtable';
+import Footer from './Components/Footer'
+import './App.css';
 
 function App() {
   return (
-    <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
-    </ChakraProvider>
+   <Router>
+     <Header/>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/Menu' element={<Menu/>} />
+        <Route path='/Specials' element={<Specials/>} />
+        <Route path='/Gallery' element={<Gallery/>} />
+        <Route path='/Booxtable' element={<Booxtable/>} />
+      </Routes>
+      <Footer/>
+   </Router>
   );
 }
 

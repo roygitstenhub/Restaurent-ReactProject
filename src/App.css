@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700;900&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    text-transform: capitalize;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  
+}
+
+::-webkit-scrollbar {
+    display: none;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 95%;
+    margin: auto;
+}
+
+span {
+    color: #f6b319;
+}
+
+.home-banner {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url('./Assets/jumbotron_1200.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home-banner::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: black;
+    opacity: 0.7;
+
+}
+
+.aboutusimg {
+    animation-name: moveimg;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+@keyframes moveimg {
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+.card {
+    transition: all 0.3s linear;
+    border: 2px solid black;
+}
+
+.card:hover {
+    box-shadow: white 0px 1px 2px 0px, white 0px 2px 6px 2px;
+    transform: scale(1.1);
+}
+
+.cheif-item {
+    position: relative;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.cheif-item::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: black;
+    opacity: 0.1;
+}
+
+.cheif-item {
+    transition: all 0.3s linear;
+
+}
+
+.cheif-item:hover {
+    transform: translateY(-8px);
+    background-color: white;
+}
+
+.main-text {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+.cheif-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.cheif-card::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: -105%;
+    z-index: 2;
+    display: block;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.374) 90%);
+    transform: skew(125deg);
+}
+
+.cheif-card:hover:before {
+    animation: effectShine .75s;
+}
+
+@keyframes effectShine {
+    100% {
+        left: 120%;
+    }
+}
+
+.smoke-one-banner {
+    background-image: url('../src/Assets/smoke2.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.smoke-two-banner {
+    background-image: url('../src/Assets/smoke2.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.smoke-three-banner {
+    background-image: url('../src/Assets/smoke3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ms-img {
+    background-image: url('../src/Assets/smoke1.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.typewriterpara {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
